@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { ProgressNotes } from './progress-notes/progress-notes';
+import { ProgressNotesComponent } from './progress-notes/progress-notes.component';
 import { MilestoneTracker } from './milestone-tracker/milestone-tracker';
+
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, ProgressNotes, MilestoneTracker],
+  standalone: true,
+  imports: [RouterOutlet, ProgressNotesComponent, MilestoneTracker],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  protected title = 'project-progress-tracker';
+  protected title = 'ProjectProgressTracker';
 }

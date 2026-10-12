@@ -1,0 +1,19 @@
+label {
+  display: block;
+  margin-top: 12px;
+}
+
+input,
+select,
+textarea {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  padding: 8px;
+  margin-top: 4px;
+  box-sizing: border-box;
+}
+
+.error-message {
+  color: red;
+}
