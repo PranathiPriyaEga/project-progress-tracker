@@ -50,3 +50,7 @@ node_modules/
 # Build output
 dist/
 .angular/
+node_modules/
+**/node_modules/
+dist/
+.angular/
