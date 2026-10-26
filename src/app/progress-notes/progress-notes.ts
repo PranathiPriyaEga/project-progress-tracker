@@ -7,7 +7,7 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
   templateUrl: './progress-notes.html',
   styleUrl: './progress-notes.css'
 })
-export class ProgressNotes {
+export class ProgressNotesComponent {
   progressNotesForm = new FormGroup({
     projectName: new FormControl(''),
     date: new FormControl(''),

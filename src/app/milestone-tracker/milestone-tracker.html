@@ -1,27 +1,60 @@
 <h2>Milestone Tracker</h2>
 
-<label for="milestone">Milestone:</label>
-<input
-  id="milestone"
-  type="text"
-  placeholder="Enter milestone"
-/>
+<form (ngSubmit)="addMilestone()">
 
-<br><br>
+  <label for="milestone">Milestone:</label>
+  <input
+    id="milestone"
+    name="milestone"
+    type="text"
+    [(ngModel)]="milestoneName"
+    placeholder="Enter milestone"
+    required
+  />
 
-<label for="milestoneDate">Target Date:</label>
-<input
-  id="milestoneDate"
-  type="date"
-/>
+  <br><br>
 
-<br><br>
+  <label for="milestoneDate">Target Date:</label>
+  <input
+    id="milestoneDate"
+    name="targetDate"
+    type="date"
+    [(ngModel)]="targetDate"
+  />
 
-<label for="status">Status:</label>
-<select id="status">
-  <option>Not Started</option>
-  <option>In Progress</option>
-  <option>Completed</option>
-</select>
+  <br><br>
 
-<br><br>
+  <label for="status">Status:</label>
+  <select
+    id="status"
+    name="status"
+    [(ngModel)]="status"
+  >
+    <option value="Not Started">Not Started</option>
+    <option value="In Progress">In Progress</option>
+    <option value="Completed">Completed</option>
+  </select>
+
+  <br><br>
+
+  <button type="submit">Add Milestone</button>
+
+</form>
+
+<p *ngIf="message">{{ message }}</p>
+
+<hr>
+
+<h3>Saved Milestones</h3>
+
+<p *ngIf="isLoading">Loading milestones...</p>
+
+<ul>
+  <li *ngFor="let milestone of milestones">
+    <strong>{{ milestone.name }}</strong>
+    — {{ milestone.status }}
+    <span *ngIf="milestone.targetDate">
+      — Target Date: {{ milestone.targetDate }}
+    </span>
+  </li>
+</ul>
